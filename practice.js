@@ -18,7 +18,9 @@ var arr = [10,20,30];
 */
 
 //Code Here
-
+function first(arr) {
+  return arr[0];
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -33,8 +35,9 @@ var arr = [40,50,60];
 */
 
 //Code Here
-
-
+function last(arr) {
+  return arr[2];
+}
 
 ////////// PROBLEM 3 //////////
 
@@ -48,7 +51,11 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 */
 
 //Code Here
-
+function looper(family){
+  for (var i = 0; i < family.length; i++) {
+    alert(family[i]);
+  }
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -63,7 +70,12 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 */
 
 //Code Here
+function reversedLooper(letters){
+  for (var i = letters.length -1; i >= 0; i--){
+   alert(letters[i]);
+  }
 
+};
 
 
 ////////// PROBLEM 5 //////////
@@ -78,7 +90,15 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 */
 
 //Code Here
-
+function evenFinder(nums){
+  var arr = [];
+  for (var x = 0; x < nums.length; x++){
+    if (nums[x] % 2 === 0){
+      arr.push(nums[x]);
+    }
+  }
+  return arr;
+} 
 
 
 
@@ -106,7 +126,19 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
-
+function divider(numbersArray){
+  let arr = [];
+  let arry = [];
+  let arrays = [arr, arry];
+  for (var i = 0; i < numbersArray.length; i++){
+    if (numbersArray[i] % 2 === 0){
+      arr.push(numbersArray[i]);
+    }else { 
+      arry.push(numbersArray[i])
+    }
+  }
+  return arrays;
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -117,16 +149,25 @@ var getRandomArbitrary = function() {
 };
 // Do not edit the code above.
 
-/* 
-  var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
-  Above you're given a function that will return a random number between 0 and 30. There is also a commented out array full of numbers to help you visualize what your function will be receiving.
-  Write a function named finder that will take in an array as an argument.
-  It will then  get a random number (by invoking getRandomArbitrary).
-  Loop through the array to see if that random number is in the array. 
-  If it is, return true, if it's not, return false
-*/
+
+// var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
+//   Above you're given a function that will return a random number between 0 and 30. There is also a commented out array full of numbers to help you visualize what your function will be receiving.
+//   Write a function named finder that will take in an array as an argument.
+//   It will then  get a random number (by invoking getRandomArbitrary).
+//   Loop through the array to see if that random number is in the array. 
+//   If it is, return true, if it's not, return false-
+// */
 
 //Code Here
+function finder(numbers){
+  let num = getRandomArbitrary();
+  for (let i = 0; i < numbers.length; i++){
+    if (numbers[i] === num){
+      return true;
+    }
+  }
+  return false;
+}
 
 
 
@@ -156,8 +197,24 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
-
+function removeItem(myGroceryList, item){
+  if (myGroceryList && item){
+    for (let i = 0; i < myGroceryList.length; i++){
+      if (item === myGroceryList[i]){
+        myGroceryList.splice(i, 1)
+      }
+    }
+    return myGroceryList;
+  }
+  return []
+}
+function addItem(myGroceryList, item){
+  if (myGroceryList && item){
+    myGroceryList.push(item)
+    return (myGroceryList)
+  }
+  return [];
+}
 
 ////////// PROBLEM 9 //////////
 
@@ -166,6 +223,15 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function maker(){
+  
+  let array = [];
+  
+ for (let i = 1; i <= 215; i++){
+   array.push(i)
+  }
+  return array; 
+}
 
 
 
@@ -181,8 +247,15 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 */
   
-//Code Here
 
+function addTen(numbers){
+  let sum = [];
+  for (let i = 0; i < numbers.length; i++){
+    sum.push(+numbers[i] + 10);
+  }
+  return sum;
+  
+}
 
 
 ////////// PROBLEM 11 //////////
@@ -207,7 +280,13 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function longer(arr1, arr2){
+  if (arr1.length > arr.length) {
+    return arr1;
+  }else {
+    return arr2;
+  }
+}
 
 
 /*
@@ -220,7 +299,12 @@ for(var i = 0; i < num2; i++){
 
 //Code Here
 
-
+function both(arr1, arr2){
+  let arr3 = [];
+  arr1.forEach((e1) => arr2.forEach((e2) => {if(e1 === e2){arr3.push(e1)}}))
+  
+  return arr3;
+}
 
 ////////// PROBLEM 12 //////////
 
@@ -259,6 +343,8 @@ var colt = {
 */
 
 //Code Here
+devMountainEmployees.push(tyler, cahlan, ryan, colt)
+
 
 
 
@@ -267,7 +353,6 @@ var colt = {
   Loop through your devMountainEmployees until you find cahlan, then remove him from the array.
 */
 
-//Code Here
 
 
 
@@ -280,8 +365,27 @@ var colt = {
 */
 
 //Code Here
+let users = []
+user1 = {
+    name: 'Tyler McGinnis',
+    email: 'tylermcginnis33@gmail.com',
+    password: 'iLoveJavaScript',
+    username: 'infiniteLoop'
+}
+user2 = {
+  name: 'SpongeBob',
+  email: 'SpongeBob33@gmail.com',
+  password: 'iLovePineapples',
+  username: 'infiniteLoop'
+}
+user3 = {
+  name: 'Bruce Wayne',
+  email: 'Batman53@gmail.com',
+  password: 'iamBatman',
+  username: 'infiniteLoop'
+}
 
-
+users.push(user1, user2, user3);
 
 /*
   Now add three user objects to your users array. Each user object should contain the following properties. name, email, password, username.
@@ -290,12 +394,12 @@ var colt = {
 */
 
 // Do not edit the code below.
-var user1 = {
-    name: 'Tyler McGinnis',
-    email: 'tylermcginnis33@gmail.com',
-    password: 'iLoveJavaScript',
-    username: 'infiniteLoop'
-};
+// var user1 = {
+//     name: 'Tyler McGinnis',
+//     email: 'tylermcginnis33@gmail.com',
+//     password: 'iLoveJavaScript',
+//     username: 'infiniteLoop'
+// };
 // Do not edit the code above.
 
 //Code Here
@@ -313,6 +417,16 @@ var user1 = {
 */
 
 //Code Here
+// function deleteUser(users){
+  for(let key in users){
+    if(users[key].email === "tylermcginnis33@gmail.com"){
+      delete users[key]
+    } 
+    }
+   
+
+
+
 
 
 
